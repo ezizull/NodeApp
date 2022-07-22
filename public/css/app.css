@@ -1,0 +1,808 @@
+html {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	font-family: "Hauora", sans-serif;
+	padding: 0px;
+	margin: 0px;
+	font-size: 1vw;
+	color: darkslategrey;
+	background-color: ghostwhite;
+	height: 100%;
+	/* transition: 0.6s background-color ease; */
+}
+
+
+
+
+ul {
+	margin: 10px 0px 10px 0px;
+}
+
+input,
+select {
+	display: block;
+}
+
+option {
+	border: 0px;
+	outline: 0px;
+	display: block;
+	white-space: pre;
+}
+
+h3 {
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+
+select,
+input {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+
+
+
+
+nav.navbar {
+	top: 0;
+	padding: 0;
+	z-index: 2;
+	width: 100%;
+	display: flex;
+	position: sticky;
+	box-shadow: none;
+	align-items: start;
+	justify-content: center;
+	transition: box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+nav.navbar.scrolled {
+	background-color: ghostwhite;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+nav ul.nav {
+	list-style-type: none;
+	display: inline-block;
+	width: auto;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul.nav li {
+	display: flex;
+	float: left;
+}
+
+nav ul.nav li a {
+	text-align: center;
+	font-size: 1.1vw;
+	display: inline-block;
+	color: darkslategrey;
+	padding: 8vh 1.5vw 3vh;
+	text-decoration: none;
+	transition: padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+nav.scrolled ul.nav li a {
+	color: black;
+	padding: 4vh 1.5vw 4vh;
+}
+
+nav ul.nav li a:hover {
+	background-color: lavender;
+}
+
+
+
+
+main {
+	position: relative;
+	min-height: 100vh;
+	margin-top: 20vh;
+	padding: 2%;
+}
+
+.tabel section {
+	overflow-x: auto;
+	border-radius: 1em;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	width: 100%;
+}
+
+table {
+	width: 1214px;
+	padding: 1.5em 1em;
+	border-radius: 1em;
+	background: white;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+thead {
+	transition: all 200ms ease-in-out;
+}
+
+thead .column th {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+thead .column th:not(thead .column:last-of-type th) {
+	padding-top: 1.2em;
+}
+
+thead .column th:last-of-type:not(thead .column:last-of-type th) {
+	padding-bottom: 0.5em;
+}
+
+thead .column:last-of-type {
+	border-bottom: solid 2px grey;
+}
+
+thead .column th:not(thead .column:first-of-type th:last-of-type) {
+	padding-bottom: 1.2em;
+}
+
+tbody .column {
+	font-size: 16px;
+	height: 8em;
+	transition: all 200ms ease-in-out;
+}
+
+tbody .column td {
+	width: auto;
+	margin: auto;
+	padding: auto;
+	height: 128px;
+}
+
+.column:nth-of-type(1) th:nth-of-type(2),
+.column td:nth-of-type(2) {
+	width: 300px;
+}
+
+tbody .column:first-of-type td {
+	padding-top: 2em;
+}
+
+tbody .column:last-of-type td {
+	padding-bottom: 2em;
+}
+
+tbody td.photo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+tbody td img {
+	width: 150px;
+	height: 80%;
+	object-fit: cover;
+}
+
+thead:hover {
+	border-radius: 1em;
+	background-color: lavender;
+}
+
+tbody .column:hover,
+tbody .column:focus {
+	background-color: lavender;
+}
+
+
+
+
+.container {
+	margin-top: 40px;
+	padding: 0px 30px 30px 30px;
+}
+
+.flexrow {
+	display: flex;
+}
+
+.flexcol {
+	flex: auto;
+}
+
+.column {
+	padding: 0;
+	margin: 2vw 0;
+}
+
+.photo .flexrow {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	position: relative;
+}
+
+.photo .flexcol {
+	flex-basis: 0;
+	-webkit-box-flex: 1;
+	flex-grow: 1;
+	flex-shrink: 1;
+	padding: 0px 0.8em;
+}
+
+.picture {
+	margin: 1.5em 0px;
+	width: 100%;
+	display: block;
+	position: relative;
+	z-index: 0;
+}
+
+.photo .flexrow.more {
+	margin-top: 4vw;
+	justify-content: center;
+}
+
+.photo .more button#addmore {
+	width: 4vw;
+	height: 4vw;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: dodgerblue;
+	clip-path: circle(50% at 50% 50%);
+}
+
+.photo .more button svg {
+	top: 50%;
+	left: 50%;
+	width: 1.5vw;
+	fill: white;
+	height: 1.5vw;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+
+.photo .more button svg.on {
+	animation: pushdown 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.photo .more button svg path {
+	stroke: white;
+	stroke-width: 0.05vw;
+}
+
+@keyframes pushdown {
+	0% {
+		top: 50%;
+	}
+
+	50% {
+		top: 120%;
+	}
+
+	51% {
+		top: -20%;
+	}
+
+	100% {
+		top: 50%;
+	}
+}
+
+
+
+
+.wikiped row {
+	height: 500px;
+}
+
+.wikiped section .title p {
+	margin: 0 0 0.5vw;
+}
+
+.wikiped section .photo {
+	height: 33vw;
+}
+
+.wikiped section .photo img {
+	width: 100%;
+	height: 100%;
+	object-position: center 70%;
+	object-fit: cover;
+}
+
+.title .header {
+	font-size: 2.2vw;
+	word-spacing: 4px;
+}
+
+.title .quote {
+	font-size: 1.2vw;
+	height: 1.4vw;
+	word-spacing: 2px;
+}
+
+.carousel-item {
+	height: 33vw;
+	background-color: black;
+}
+
+.carousel-item img {
+	width: 100%;
+	height: 100%;
+	filter: opacity(50%);
+	object-fit: cover;
+}
+
+.carousel-item .carousel-caption {
+	display: flex;
+	text-align: justify;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	bottom: 0;
+	padding: 0;
+	font-size: 1vw;
+}
+
+.carousel-item .carousel-caption p {
+	margin: 0;
+}
+
+section.newtodo {
+	margin-top: 30vh;
+}
+
+section.newtodo .rowtodo {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	margin-bottom: 2.5vh;
+	justify-content: center;
+}
+
+section.newtodo .rowtodo:nth-child(1) {
+	margin-bottom: 6vw;
+	padding: 0 2vw;
+}
+
+#newtask input.intodo {
+	border: none;
+	resize: none;
+	height: 4vw;
+	width: 52.5vw;
+	outline: none;
+	margin: 0 1vw;
+	padding: 1.5vw;
+	color: #1A1C20;
+	font-size: 1vw;
+	word-spacing: 0.25vw;
+	border-radius: 0.4vw;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+#newtask .logo {
+	height: 4vw;
+	width: 4vw;
+	display: flex;
+	align-items: center;
+	border-radius: 0.5vw;
+	justify-content: center;
+	background-color: #1A1C20;
+}
+
+#newtask button.icon {
+	height: 4vw;
+	width: 6.5vw;
+	border: none;
+	outline: none;
+	display: flex;
+	padding: 1.5vw;
+	align-items: center;
+	border-radius: 0.5vw;
+	justify-content: center;
+	background-color: dodgerblue;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px;
+}
+
+#newtask button.icon:hover {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+#newtask button.icon:focus {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+#newtask .logo svg {
+	width: 2vw;
+	height: auto;
+	fill: white;
+	display: block;
+}
+
+#newtask button.icon svg {
+	width: 2vw;
+	height: auto;
+	fill: white;
+}
+
+#newtask button.icon svg path {
+	stroke: white;
+	stroke-width: 0.05vw;
+}
+
+#tasks {
+	flex-direction: column;
+}
+
+#tasks .task {
+	width: 65vw;
+	height: 4vw;
+	display: flex;
+	padding: 0vw 1vw 0vw 2vw;
+	margin-bottom: 1vw;
+	align-items: center;
+	border-radius: 0.5vw;
+	background-color: white;
+	justify-content: space-between;
+	box-shadow: rgba(0, 0, 0, 0.005) 0px 1px 3px 0px, rgba(0, 0, 0, 0.005) 0px 1px 2px 0px;
+}
+
+#tasks .task .name {
+	width: 90%;
+}
+
+#tasks .task .name span {
+	font-size: 1vw;
+	line-clamp: 0.1;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+}
+
+#tasks .task .button {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#tasks .delete button.icon {
+	width: 4vw;
+	height: 2.2vw;
+	border: none;
+	outline: none;
+	display: flex;
+	padding: 0.5vw;
+	align-items: center;
+	border-radius: 0.5vw;
+	justify-content: center;
+	background-color: tomato;
+	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+#tasks .delete button.icon:hover {
+	box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+#tasks .delete button.icon:focus {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+#tasks .delete button.icon svg {
+	width: 1vw;
+	height: 1vw;
+	fill: white;
+}
+
+main.about {
+	padding: 2% 0%;
+	margin-top: 0vh;
+}
+
+.about .flexrow {
+	justify-content: center;
+	margin-bottom: 6vw;
+}
+
+.about .flexrow.profbout {
+	margin-bottom: 12vw;
+}
+
+.about .flexrow:not(.about .flexrow:nth-child(1)) {
+	padding: 0% 6%;
+}
+
+.about .flexrow.profbout {
+	justify-content: center;
+}
+
+.about .flexrow img.background {
+	width: 100%;
+	height: 32.5vw;
+	object-fit: cover;
+	object-position: 50% 20%;
+}
+
+.about .flexrow img.profil {
+	top: 27.5vw;
+	width: 15%;
+	z-index: 0;
+	height: auto;
+	padding: 0.5%;
+	object-fit: cover;
+	border-radius: 50%;
+	position: absolute;
+	background-color: ghostwhite;
+}
+
+.about .flexrow.mainbout {
+	align-items: center;
+	flex-direction: column;
+}
+
+.mainbout .flexcol {
+	width: 45%;
+	height: 50vw;
+	border-radius: 1vw;
+	margin-bottom: 5vw;
+	padding: 0vw 0vw 2vw;
+	background-color: white;
+	box-shadow: rgba(99, 99, 99, 0.1) 0vw 0.2vw 0.8vw 0vw;
+}
+
+.mainbout .flexcol:hover {
+	box-shadow: rgba(99, 99, 99, 0.2) 0vw 0.2vw 0.8vw 0vw;
+}
+
+.mainbout .flexcol img.post {
+	width: 100%;
+	height: 25vw;
+	object-fit: cover;
+}
+
+.mainbout .flexcol .topbar {
+	display: flex;
+	font-weight: 700;
+	padding: 1vw 1.5vw;
+	justify-content: space-between;
+}
+
+.mainbout .flexcol .botbar {
+	height: 19vw;
+	display: flex;
+	flex-direction: column;
+	padding: 2.5vw 2.5vw 0vw;
+	justify-content: space-between;
+}
+
+.mainbout .flexcol .topbar p {
+	margin: 0;
+	padding: 0;
+	font-size: 1.1vw;
+}
+
+.mainbout .flexcol .botbar .quote {
+	width: auto;
+	min-height: 80%;
+}
+
+.mainbout .flexcol .botbar .respont {
+	width: 100%;
+	display: flex;
+	min-height: 20%;
+	max-height: 20%;
+	align-items: center;
+	justify-content: center;
+}
+
+.mainbout .flexcol .botbar .quote p {
+	margin: 0;
+	padding: 0;
+	font-size: 1.1vw;
+	overflow: hidden;
+	text-align: justify;
+	display: -webkit-box;
+	-webkit-line-clamp: 7;
+	-webkit-box-orient: vertical;
+}
+
+.mainbout .flexcol .botbar .respont a {
+	font-weight: 800;
+	font-size: 0.8vw;
+}
+
+.btnshow {
+	width: 1.2vw;
+	height: 1.2vw;
+	fill: darkslategrey;
+}
+
+.btnshow:hover,
+.btnshow:focus {
+	fill: rgb(35, 63, 63);
+}
+
+.btnclose {
+	width: 1.3vw;
+	height: 1.3vw;
+	fill: tomato;
+}
+
+.btnclose:hover,
+.btnclose:focus {
+	fill: rgb(254, 73, 41);
+}
+
+.addbout button {
+	width: 45%;
+	height: 4vw;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 1vw;
+	background-color: white;
+	box-shadow: rgba(99, 99, 99, 0.1) 0vw 0.2vw 0.4vw 0vw;
+}
+
+.addbout button:hover {
+	box-shadow: rgba(99, 99, 99, 0.2) 0vw 0.2vw 0.4vw 0vw;
+}
+
+.addbout button:focus {
+	box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 2px inset;
+}
+
+.addbout button svg {
+	fill: dodgerblue;
+	width: 1.7vw;
+	height: 1.6vw;
+}
+
+.addbout button svg path {
+	stroke: dodgerblue;
+	stroke-width: 0.05vw;
+}
+
+
+
+footer {
+	bottom: 0;
+	height: 200px;
+	color: white;
+	background-color: #1A1C20;
+	margin-top: 15vw;
+	padding: 0px;
+}
+
+footer .flexrow {
+	margin: auto;
+	padding: 48px 48px 0px;
+}
+
+footer section.flexrow h3 {
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+
+
+
+@media (max-width:1100px) {
+	.wikimain img.img-content {
+		width: 100%;
+		margin: 0px;
+		vertical-align: top;
+	}
+
+	section.wikimain.flexrow {
+		flex-direction: column;
+	}
+
+	.wikimain .flexcol.content {
+		width: 100%;
+	}
+
+	.carousel-item {
+		height: 65vw;
+	}
+
+	.carousel-item .carousel-caption {
+		font-size: 1.5vw;
+	}
+
+	.title .header {
+		font-size: 3.2vw;
+		word-spacing: 0.8vw;
+	}
+
+	.title .quote {
+		font-size: 1.8vw;
+		height: 1.4vw;
+		word-spacing: 0.25vw;
+	}
+}
+
+@media (max-width:800px) {
+	.photo .flexrow .flexcol:last-child {
+		display: none;
+	}
+}
+
+@media (max-width:700px) {
+	.photo .flexrow .flexcol {
+		padding: 4px;
+	}
+}
+
+@media (max-width:600px) {
+	.wikiped .wikibot.flexrow {
+		flex-direction: column;
+	}
+
+	.wikiped .wikibot .card {
+		width: 100%;
+	}
+}
+
+@media (max-width:400px) {
+	.wikimain .flexcol.content {
+		margin-top: 20px;
+	}
+}
+
+@media (min-width:1300px) {
+	table {
+		width: 100%;
+	}
+}
+
+@media (min-width:1400px) {
+	.carousel-item {
+		height: 65vw;
+	}
+
+	.carousel-item .carousel-caption {
+		font-size: 1.5vw;
+	}
+
+	.title .header {
+		font-size: 3.2vw;
+		word-spacing: 0.8vw;
+	}
+
+	.title .quote {
+		font-size: 1.8vw;
+		height: 1.4vw;
+		word-spacing: 0.25vw;
+	}
+}
+
+@media (min-width: 2000px) {
+	footer {
+		min-height: 10vh;
+	}
+}
+
+@media (min-width: 2000px) {
+	nav ul.nav li a {
+		padding: 6vh 1.5vw 3vh;
+		transition: padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	nav.scrolled ul.nav li a {
+		padding: 3vh 1.5vw 3vh;
+	}
+}

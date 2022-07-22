@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/app.css">
+	<title>Photo</title>
+</head>
+
+<body>
+	<%- include('partial/navbar'); -%>
+	<main class="photo">
+		<section class="flexrow">
+			<section class="flexcol">
+				<img class="picture"
+					src="images/photo/ternak.jpg"
+					alt="gambar">
+				<img class="picture"
+					src="images/photo/burung.jpg"
+					alt="gambar">
+				<img class="picture"
+					src="images/photo/ikan.jpg"
+					alt="gambar">
+			</section>
+			<section class="flexcol">
+				<img class="picture"
+					src="images/photo/ikan.jpg"
+					alt="gambar">
+				<img class="picture"
+					src="images/photo/hutan.jpg"
+					alt="gambar">
+				<img class="picture"
+					src="images/photo/burung.jpg"
+					alt="gambar">
+			</section>
+			<section class="flexcol">
+				<img class="picture"
+					src="images/photo/hutan.jpg"
+					alt="gambar">
+				<img class="picture"
+					src="images/photo/ternak.jpg"
+					alt="gambar">
+				<img class="picture"
+					src="images/photo/ikan.jpg"
+					alt="gambar">
+			</section>
+
+		</section>
+		<section class="flexrow more">
+			<button id="addmore" type="button">
+				<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+					<path fill-rule="evenodd"
+						d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+				</svg>
+			</button>
+		</section>
+	</main>
+	<%- include('partial/footer'); -%>
+
+	<script src="/js/app.js"></script>
+</body>
+
+</html>

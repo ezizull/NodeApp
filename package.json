@@ -1,0 +1,34 @@
+{
+  "name": "NodeApp",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "bootstrap-icons": "^1.8.3",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.3.4",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "nodemon": "^2.0.16",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "scripts": {
+    "sync": "browser-sync start --server --files \"**/*\"",
+    "dev": "postcss ./src/input.css --output ./public/css/tailwind.css",
+    "watch:dev": "nodemon -x npm run dev -w tailwind.config.cjs -w tailwind.css",
+    "watch": "run-p watch:dev sync"
+  }
+}

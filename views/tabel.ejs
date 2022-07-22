@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/app.css">
+	<title>Tabel</title>
+</head>
+
+<body>
+	<%- include('partial/navbar'); -%>
+	<main class="tabel">
+		<section>
+			<table style="text-align: center; vertical-align: middle;">
+				<thead>
+					<tr class="column">
+						<th rowspan="2">Filum</th>
+						<th rowspan="2">Gambar</th>
+						<th rowspan="2">Jumlah Spesies</th>
+						<th colspan="2">Habitat</th>
+					</tr>
+					<tr class="column">
+						<th>Darat</th>
+						<th>Laut</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="column">
+						<td>Annelida</td>
+						<td class="photo"><img
+								src="images/tabel/worm.jpg"
+								alt="belut"></td>
+						<td>17.000</td>
+						<td>ya</td>
+						<td>ya</td>
+					</tr>
+					<tr class="column">
+						<td>Arthropoda</td>
+						<td class="photo"><img
+								src="images/tabel/bee.jpg"
+								alt="tawon"></td>
+						<td>1.257.000</td>
+						<td>ya</td>
+						<td>no</td>
+					</tr>
+					<tr class="column">
+						<td>Cnidaria</td>
+						<td class="photo"><img
+								src="images/tabel/cnidaria.jpg"
+								alt="koral"></td>
+						<td>16,000</td>
+						<td>no</td>
+						<td>ya</td>
+					</tr>
+
+				</tbody>
+			</table>
+		</section>
+	</main>
+	<%- include('partial/footer'); -%>
+	<script src="/js/app.js"></script>
+</body>
+
+</html>
